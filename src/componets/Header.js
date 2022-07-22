@@ -1,4 +1,4 @@
-import CartBtn from "./CartBtn";
+import CartWidget from "./CartWidget";
 import NavBar from "./NavBar";
 
 function Header() {
@@ -10,7 +10,7 @@ function Header() {
                 </h1>
                 <div className="menu">
                     <NavBar />
-                    <CartBtn />
+                    <CartWidget />
                 </div>
             </header>
         </>

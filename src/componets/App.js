@@ -1,4 +1,5 @@
 import Header from "./Header";
+import ItemListContainer from "./ItemListContainer";
 import NavBar from "./NavBar";
 
 function App() {
@@ -6,8 +7,7 @@ function App() {
         <>
             <Header />
             <main>
-                <h2 className="tittle">Titulo de la tienda</h2>
-                <p>Articulos de la tienda</p>
+            <ItemListContainer/>
             </main>
             <footer>
                 <h4 className="brand"><a href="http://localhost:3000/">SENSAROMAS </a>&copy; 2022</h4>
