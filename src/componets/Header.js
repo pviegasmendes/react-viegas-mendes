@@ -4,17 +4,18 @@ import NavBar from "./NavBar";
 function Header() {
     return (
         <>
-            <header>
-                <h1 className="brand">
-                    <a href="http://localhost:3000/">SENSAROMAS</a>{" "}
+            <header className="sticky top-0 flex h-20 bg-violet-100 justify-between items-center px-4 drop-shadow-md">
+                <h1 className="text-3xl font-semibold">
+                    <a href="http://localhost:3000/">BRAND</a>{" "}
                 </h1>
-                <div className="menu">
+                <div className="flex">
                     <NavBar />
                     <CartWidget />
                 </div>
             </header>
-        </>
+        </>     
     );
 }
+
 
 export default Header;

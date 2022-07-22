@@ -6,11 +6,11 @@ function App() {
     return (
         <>
             <Header />
-            <main>
+            <main className="flex justify-center">
             <ItemListContainer/>
             </main>
-            <footer>
-                <h4 className="brand"><a href="http://localhost:3000/">SENSAROMAS </a>&copy; 2022</h4>
+            <footer className="flex h-20 bg-violet-100 gap-4 items-center px-4">
+                <h4><a href="http://localhost:3000/">BRAND </a>&copy; 2022</h4>
                 <NavBar/>
             </footer>
         </>
