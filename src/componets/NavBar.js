@@ -1,20 +1,71 @@
-function NavBar() {
-    return (
-        <>
-            <nav >
+import CartWidget from "./CartWidget";
+
+const NavBar = (props) => {
+    if (props.type == "header") {
+        return (
+            <nav>
                 <ul className="flex gap-2 mr-4 ">
                     <li>
-                        <a href="http://localhost:3000/" className="bg-violet-500 text-white py-1 px-3 rounded hover:bg-violet-700 ">Inicio</a>
+                        <a
+                            href="#"
+                            className="bg-violet-500 text-white py-1 px-3 rounded hover:bg-violet-700 "
+                        >
+                            Inicio
+                        </a>
                     </li>
                     <li>
-                        <a href="http://localhost:3000/" className="bg-violet-500 text-white py-1 px-3 rounded hover:bg-violet-700 ">Productos</a>
+                        <a
+                            href="#"
+                            className="bg-violet-500 text-white py-1 px-3 rounded hover:bg-violet-700 "
+                        >
+                            Productos
+                        </a>
                     </li>
                     <li>
-                        <a href="http://localhost:3000/" className="bg-violet-500 text-white py-1 px-3 rounded hover:bg-violet-700 ">Contacto</a>
+                        <a
+                            href="#"
+                            className="bg-violet-500 text-white py-1 px-3 rounded hover:bg-violet-700 "
+                        >
+                            Contacto
+                        </a>
+                    </li>
+                    <li>
+                        <CartWidget />
                     </li>
                 </ul>
             </nav>
-        </>
-    );
-}
+        );
+    } else {
+        return (
+            <nav>
+                <ul className="flex gap-2 mr-4 ">
+                    <li>
+                        <a
+                            href="#"
+                            className="bg-violet-500 text-white py-1 px-3 rounded hover:bg-violet-700 "
+                        >
+                            Inicio
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="#"
+                            className="bg-violet-500 text-white py-1 px-3 rounded hover:bg-violet-700 "
+                        >
+                            Productos
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="#"
+                            className="bg-violet-500 text-white py-1 px-3 rounded hover:bg-violet-700 "
+                        >
+                            Contacto
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        );
+    }
+};
 export default NavBar;
