@@ -1,7 +1,7 @@
 import CartWidget from "./CartWidget";
 
-const NavBar = (props) => {
-    if (props.type == "header") {
+const NavBar = ({type}) => {
+    if (type == "header") {
         return (
             <nav>
                 <ul className="flex gap-2 mr-4 ">
