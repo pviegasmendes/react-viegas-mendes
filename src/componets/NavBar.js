@@ -3,7 +3,7 @@ import CartWidget from "./CartWidget";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 
 const NavBar = ({ type }) => {
-    const [nav, setNav] = useState(false);
+    const [nav, setNav] = useState(true);
 
     const handleNav = () => {
         setNav(!nav);
@@ -85,7 +85,7 @@ const NavBar = ({ type }) => {
                     <li>
                         <a
                             href="#"
-                            className=" py-1 px-3 rounded hover:bg-violet-500 hover:text-white "
+                            className=" py-1 px-3 hover:underline underline-offset-4"
                         >
                             Inicio
                         </a>
@@ -93,7 +93,7 @@ const NavBar = ({ type }) => {
                     <li>
                         <a
                             href="#"
-                            className=" py-1 px-3 rounded hover:bg-violet-500 hover:text-white "
+                            className=" py-1 px-3 hover:underline underline-offset-4"
                         >
                             Productos
                         </a>
@@ -101,7 +101,7 @@ const NavBar = ({ type }) => {
                     <li>
                         <a
                             href="#"
-                            className=" py-1 px-3 rounded hover:bg-violet-500 hover:text-white "
+                            className=" py-1 px-3 hover:underline underline-offset-4"
                         >
                             Contacto
                         </a>
