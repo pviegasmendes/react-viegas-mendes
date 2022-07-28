@@ -34,19 +34,19 @@ function ItemCount() {
                     <div className="flex justify-between border-solid border-2 border-slate-100 rounded-xl mb-2 overflow-hidden">
                         <button
                             onClick={quitarProducto}
-                            className="p-4 bg-slate-100"
+                            className="p-4 bg-slate-100 hover:bg-slate-200"
                         >
                             -
                         </button>
                         <div className="p-4">{contador}</div>
                         <button
                             onClick={agregarProducto}
-                            className="p-4 bg-slate-100"
+                            className="p-4 bg-slate-100 hover:bg-slate-200"
                         >
                             +
                         </button>
                     </div>
-                    <button className="w-full p-4 mt-1 bg-slate-100 rounded-xl">
+                    <button className="font-bold w-full p-4 mt-1 bg-slate-100 rounded-xl hover:bg-green-500 hover:text-white">
                         Agregar
                     </button>
                 </div>
