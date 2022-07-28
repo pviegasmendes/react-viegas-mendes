@@ -1,3 +1,5 @@
+import ItemCount from "./ItemCount";
+
 function ItemListContainer(props) {
     return (
         <>
@@ -5,6 +7,7 @@ function ItemListContainer(props) {
                 <h2 className="text-center mt-8 font-bold uppercase">
                     {props.greeting}
                 </h2>
+                <ItemCount />
             </div>
         </>
     );
