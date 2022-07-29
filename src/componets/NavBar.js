@@ -2,6 +2,7 @@ import { useState } from "react";
 import CartWidget from "./CartWidget";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 
+
 const NavBar = ({ type }) => {
     const [nav, setNav] = useState(true);
 
@@ -11,12 +12,12 @@ const NavBar = ({ type }) => {
 
     if (type == "header") {
         return (
-            <nav>
+            <nav >
                 <ul className="hidden  md:flex  gap-2 mr-4">
                     <li>
                         <a
                             href="#"
-                            className=" py-1 px-3 rounded hover:bg-violet-500 hover:text-white "
+                            className=" py-1 px-3 rounded hover:underline underline-offset-4 "
                         >
                             Inicio
                         </a>
@@ -24,7 +25,7 @@ const NavBar = ({ type }) => {
                     <li>
                         <a
                             href="#"
-                            className=" py-1 px-3 rounded hover:bg-violet-500 hover:text-white "
+                            className=" py-1 px-3 rounded hover:underline underline-offset-4 "
                         >
                             Productos
                         </a>
@@ -32,7 +33,7 @@ const NavBar = ({ type }) => {
                     <li>
                         <a
                             href="#"
-                            className=" py-1 px-3 rounded hover:bg-violet-500 hover:text-white "
+                            className=" py-1 px-3 rounded hover:underline underline-offset-4 "
                         >
                             Contacto
                         </a>
@@ -42,10 +43,23 @@ const NavBar = ({ type }) => {
                     </li>
                 </ul>
                 {/* Menu nobile */}
-                <div onClick={handleNav} className="cursor-pointer block md:hidden ">
-                {!nav ? <AiOutlineClose className="text-3xl text-slate-700" /> : <AiOutlineMenu className="text-3xl text-slate-700" />} 
+                <div
+                    onClick={handleNav}
+                    className="cursor-pointer block md:hidden "
+                >
+                    {!nav ? (
+                        <AiOutlineClose className="text-3xl text-slate-700" />
+                    ) : (
+                        <AiOutlineMenu className="text-3xl text-slate-700" />
+                    )}
                 </div>
-                <div className={!nav ? "fixed left-0 top-20 w-[60%] h-screen bg-violet-100 ease-in-out duration-300" : "fixed left-[-100%]"}>
+                <div
+                    className={
+                        !nav
+                            ? "fixed left-0 top-20 w-[60%] h-screen bg-violet-100 ease-in-out duration-300"
+                            : "fixed left-[-100%]"
+                    }
+                >
                     <ul className="">
                         <li className="p-4  border-b border-slate-400">
                             <a

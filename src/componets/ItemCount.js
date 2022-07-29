@@ -8,14 +8,15 @@ function ItemCount() {
         if (stock > 0) {
             setStock(stock - 1);
             setContador(contador + 1);
-        }}
-        
+        }
+    };
 
     const quitarProducto = () => {
         if (contador > 0) {
-        setStock(stock + 1);
-        setContador(contador - 1);
-    }};
+            setStock(stock + 1);
+            setContador(contador - 1);
+        }
+    };
 
     return (
         <>
