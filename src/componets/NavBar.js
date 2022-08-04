@@ -18,7 +18,7 @@ const NavBar = ({ type }) => {
                             href="#"
                             className=" py-1 px-3 hover:underline underline-offset-4 "
                         >
-                            Inicio
+                            Home
                         </a>
                     </li>
                     <li>
@@ -26,7 +26,7 @@ const NavBar = ({ type }) => {
                             href="#"
                             className=" py-1 px-3 hover:underline underline-offset-4 "
                         >
-                            Productos
+                            Male
                         </a>
                     </li>
                     <li>
@@ -34,9 +34,17 @@ const NavBar = ({ type }) => {
                             href="#"
                             className=" py-1 px-3 hover:underline underline-offset-4 "
                         >
-                            Contacto
+                            Female
                         </a>
                     </li>
+                    <li>
+                            <a
+                                href="#"
+                                className=" py-1 px-3 hover:underline underline-offset-4 "
+                            >
+                                Contact
+                            </a>
+                        </li>
                     <li>
                         <CartWidget />
                     </li>
@@ -52,7 +60,7 @@ const NavBar = ({ type }) => {
                                 href="#"
                                 className=" text-3xl py-1 px-3 rounded "
                             >
-                                Inicio
+                                Home
                             </a>
                         </li>
                         <li className="p-4  border-b border-slate-400">
@@ -60,7 +68,7 @@ const NavBar = ({ type }) => {
                                 href="#"
                                 className=" text-3xl py-1 px-3 rounded "
                             >
-                                Productos
+                                Male
                             </a>
                         </li>
                         <li className="p-4  border-b border-slate-400">
@@ -68,7 +76,15 @@ const NavBar = ({ type }) => {
                                 href="#"
                                 className=" text-3xl py-1 px-3 rounded "
                             >
-                                Contacto
+                                Female
+                            </a>
+                        </li>
+                        <li className="p-4  border-b border-slate-400">
+                            <a
+                                href="#"
+                                className=" text-3xl py-1 px-3 rounded "
+                            >
+                                Contact
                             </a>
                         </li>
                         <li className="p-4  ">
@@ -87,7 +103,7 @@ const NavBar = ({ type }) => {
                             href="#"
                             className=" py-1 px-3 hover:underline underline-offset-4"
                         >
-                            Inicio
+                            Home
                         </a>
                     </li>
                     <li>
@@ -95,7 +111,7 @@ const NavBar = ({ type }) => {
                             href="#"
                             className=" py-1 px-3 hover:underline underline-offset-4"
                         >
-                            Productos
+                            Male
                         </a>
                     </li>
                     <li>
@@ -103,9 +119,18 @@ const NavBar = ({ type }) => {
                             href="#"
                             className=" py-1 px-3 hover:underline underline-offset-4"
                         >
-                            Contacto
+                            Female
                         </a>
                     </li>
+                    <li>
+                        <a
+                            href="#"
+                            className=" py-1 px-3 hover:underline underline-offset-4"
+                        >
+                            Contact
+                        </a>
+                    </li>
+                    
                 </ul>
             </nav>
         );

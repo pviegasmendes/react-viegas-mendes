@@ -1,13 +1,74 @@
-import ItemCount from "./ItemCount";
+import { customFetch } from "../assets/customFetch";
+import { useState, useEffect } from "react";
+import { products } from "../assets/products";
+import ItemList from "./ItemList";
+import { TailSpin } from "react-loader-spinner";
 
 function ItemListContainer(props) {
+    const [listProducts, setListProducs] = useState([]);
+    const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        customFetch(products).then((data) => {
+            setLoading(true);
+            setListProducs(data);
+        });
+    }, []);
+
+    console.log(listProducts);
+
     return (
         <>
-            <div className="container mx-auto">
+            <div className="flex flex-col ">
                 <h2 className="text-center mt-8 font-bold uppercase">
                     {props.greeting}
                 </h2>
-                <ItemCount />
+                <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl m-auto ">
+                    {loading ? (
+                        <ItemList listProducts={listProducts} />
+                    ) : (
+                        <>
+
+                       
+                        <div className="p-8">
+                            <TailSpin
+                                height="80"
+                                width="80"
+                                color="#f4f4f4"
+                                ariaLabel="tail-spin-loading"
+                                radius="1"
+                                wrapperStyle={{}}
+                                wrapperClass=""
+                                visible={true}
+                            />
+                        </div>
+                        <div className="p-8">
+                            <TailSpin
+                                height="80"
+                                width="80"
+                                color="#f4f4f4"
+                                ariaLabel="tail-spin-loading"
+                                radius="1"
+                                wrapperStyle={{}}
+                                wrapperClass=""
+                                visible={true}
+                            />
+                        </div>
+                        <div className="p-8">
+                            <TailSpin
+                                height="80"
+                                width="80"
+                                color="#f4f4f4"
+                                ariaLabel="tail-spin-loading"
+                                radius="1"
+                                wrapperStyle={{}}
+                                wrapperClass=""
+                                visible={true}
+                            />
+                        </div>
+                        </>
+                    )}
+                </div>
             </div>
         </>
     );
