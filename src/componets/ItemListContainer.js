@@ -1,6 +1,4 @@
-import { customFetch } from "../assets/customFetch";
 import { useState, useEffect } from "react";
-import { products } from "../assets/products";
 import ItemList from "./ItemList";
 import { TailSpin } from "react-loader-spinner";
 
@@ -9,13 +7,14 @@ function ItemListContainer(props) {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        customFetch(products).then((data) => {
-            setLoading(true);
-            setListProducs(data);
-        });
-    }, []);
-
-    console.log(listProducts);
+        fetch("https://fakestoreapi.com/products")
+            .then((res) => res.json())
+            .then((data) => {
+                setListProducs(data)
+                setLoading(true)
+            })
+            .catch((err) => console.log(err))
+    }, [])
 
     return (
         <>
@@ -28,44 +27,42 @@ function ItemListContainer(props) {
                         <ItemList listProducts={listProducts} />
                     ) : (
                         <>
-
-                       
-                        <div className="p-8">
-                            <TailSpin
-                                height="80"
-                                width="80"
-                                color="#f4f4f4"
-                                ariaLabel="tail-spin-loading"
-                                radius="1"
-                                wrapperStyle={{}}
-                                wrapperClass=""
-                                visible={true}
-                            />
-                        </div>
-                        <div className="p-8">
-                            <TailSpin
-                                height="80"
-                                width="80"
-                                color="#f4f4f4"
-                                ariaLabel="tail-spin-loading"
-                                radius="1"
-                                wrapperStyle={{}}
-                                wrapperClass=""
-                                visible={true}
-                            />
-                        </div>
-                        <div className="p-8">
-                            <TailSpin
-                                height="80"
-                                width="80"
-                                color="#f4f4f4"
-                                ariaLabel="tail-spin-loading"
-                                radius="1"
-                                wrapperStyle={{}}
-                                wrapperClass=""
-                                visible={true}
-                            />
-                        </div>
+                            <div className="p-8">
+                                <TailSpin
+                                    height="80"
+                                    width="80"
+                                    color="#f4f4f4"
+                                    ariaLabel="tail-spin-loading"
+                                    radius="1"
+                                    wrapperStyle={{}}
+                                    wrapperClass=""
+                                    visible={true}
+                                />
+                            </div>
+                            <div className="p-8">
+                                <TailSpin
+                                    height="80"
+                                    width="80"
+                                    color="#f4f4f4"
+                                    ariaLabel="tail-spin-loading"
+                                    radius="1"
+                                    wrapperStyle={{}}
+                                    wrapperClass=""
+                                    visible={true}
+                                />
+                            </div>
+                            <div className="p-8">
+                                <TailSpin
+                                    height="80"
+                                    width="80"
+                                    color="#f4f4f4"
+                                    ariaLabel="tail-spin-loading"
+                                    radius="1"
+                                    wrapperStyle={{}}
+                                    wrapperClass=""
+                                    visible={true}
+                                />
+                            </div>
                         </>
                     )}
                 </div>

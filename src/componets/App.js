@@ -1,19 +1,24 @@
+import { BrowserRouter } from "react-router-dom";
 import Footer from "./Footer";
 import Header from "./Header";
+import ItemDetailContainer from "./ItemDetailContainer";
 import ItemListContainer from "./ItemListContainer";
 
 function App() {
-    const brand = "SENSAROMAS";
+    const brand = "Ecommerce Inc. ";
 
     return (
         <>
-            <Header brand={brand} />
+            <BrowserRouter>
+                <Header brand={brand} />
 
-            <ItemListContainer greeting="Fragances" />
+                <ItemDetailContainer />
 
-            <Footer brand={brand} />
+                <ItemListContainer greeting="Related Products" />
+
+                <Footer brand={brand} />
+            </BrowserRouter>
         </>
     );
 }
-
 export default App;

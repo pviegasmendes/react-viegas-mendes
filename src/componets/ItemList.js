@@ -1,4 +1,4 @@
-import {Item} from "./Item";
+import { Item } from "./Item";
 
 function ItemList({ listProducts }) {
     return (

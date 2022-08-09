@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FaShoppingCart } from "react-icons/fa";
 
 function ItemCount() {
     const [contador, setContador] = useState(1);
@@ -8,21 +9,20 @@ function ItemCount() {
         if (stock > 0) {
             setStock(stock - 1);
             setContador(contador + 1);
-        }}
-        
+        }
+    };
 
     const quitarProducto = () => {
         if (contador > 0) {
-        setStock(stock + 1);
-        setContador(contador - 1);
-    }};
+            setStock(stock + 1);
+            setContador(contador - 1);
+        }
+    };
 
     return (
         <>
-            <div className="w-80 border-solid  rounded-2xl mt-7 mb-9 shadow-xl overflow-hidden">
-                <div className="h-72 bg-cover  bg-center bg-[url('https://d3ugyf2ht6aenh.cloudfront.net/stores/137/216/products/vanilla-jasmine-21-ae2fd8d8f3fbb64ad616450254712383-640-0.jpg')]"></div>
+            <div className="w-80 border-solid  rounded-2xl mt-7 mb-9overflow-hidden">
                 <div className="p-4">
-                    <h3 className=" font-bold text-xl ">Producto</h3>
                     <p className="mb-6">
                         Unidades disponibles{" "}
                         <span className="font-semibold">{stock}</span>{" "}
@@ -42,8 +42,9 @@ function ItemCount() {
                             +
                         </button>
                     </div>
-                    <button className="font-bold w-full p-4 mt-1 bg-slate-100 rounded-xl hover:bg-green-500 hover:text-white">
-                        Agregar
+                    <button className="flex justify-center font-bold w-full p-4 bg-violet-500 rounded-xl hover:bg-violet-600 hover:text-white">
+                    <FaShoppingCart className="mr-2 mt-1" />
+                        Add to Cart
                     </button>
                 </div>
             </div>

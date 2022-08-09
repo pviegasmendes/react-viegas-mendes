@@ -1,6 +1,7 @@
 import { useState } from "react";
 import CartWidget from "./CartWidget";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const NavBar = ({ type }) => {
     const [nav, setNav] = useState(true);
@@ -14,46 +15,59 @@ const NavBar = ({ type }) => {
             <nav>
                 <ul className="hidden  md:flex  gap-2 mr-4">
                     <li>
-                        <a
-                            href="#"
+                        <Link
+                            to="/"
                             className=" py-1 px-3 hover:underline underline-offset-4 "
                         >
                             Home
-                        </a>
+                        </Link>
                     </li>
                     <li>
-                        <a
-                            href="#"
+                        <Link
+                            to="/male"
                             className=" py-1 px-3 hover:underline underline-offset-4 "
                         >
                             Male
-                        </a>
+                        </Link>
                     </li>
                     <li>
-                        <a
-                            href="#"
+                        <Link
+                            to="/female"
                             className=" py-1 px-3 hover:underline underline-offset-4 "
                         >
                             Female
-                        </a>
+                        </Link>
                     </li>
                     <li>
-                            <a
-                                href="#"
-                                className=" py-1 px-3 hover:underline underline-offset-4 "
-                            >
-                                Contact
-                            </a>
-                        </li>
+                        <Link
+                            to="/contact"
+                            className=" py-1 px-3 hover:underline underline-offset-4 "
+                        >
+                            Contact
+                        </Link>
+                    </li>
                     <li>
                         <CartWidget />
                     </li>
                 </ul>
                 {/* Menu nobile */}
-                <div onClick={handleNav} className="cursor-pointer block md:hidden ">
-                {!nav ? <AiOutlineClose className="text-3xl text-slate-700" /> : <AiOutlineMenu className="text-3xl text-slate-700" />} 
+                <div
+                    onClick={handleNav}
+                    className="cursor-pointer block md:hidden "
+                >
+                    {!nav ? (
+                        <AiOutlineClose className="text-3xl text-slate-700" />
+                    ) : (
+                        <AiOutlineMenu className="text-3xl text-slate-700" />
+                    )}
                 </div>
-                <div className={!nav ? "fixed left-0 top-20 w-[60%] h-screen bg-violet-100 ease-in-out duration-300" : "fixed left-[-100%]"}>
+                <div
+                    className={
+                        !nav
+                            ? "fixed left-0 top-20 w-[60%] h-screen bg-violet-100 transition-all ease-in-out"
+                            : "fixed left-[-100%] transition-all ease-in-out"
+                    }
+                >
                     <ul className="">
                         <li className="p-4  border-b border-slate-400">
                             <a
@@ -130,7 +144,6 @@ const NavBar = ({ type }) => {
                             Contact
                         </a>
                     </li>
-                    
                 </ul>
             </nav>
         );
