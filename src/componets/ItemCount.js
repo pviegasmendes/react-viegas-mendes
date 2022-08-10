@@ -42,7 +42,7 @@ function ItemCount() {
                             +
                         </button>
                     </div>
-                    <button className="flex justify-center font-bold w-full p-4 bg-violet-500 rounded-xl hover:bg-violet-600 hover:text-white">
+                    <button className="flex justify-center font-bold w-full p-4 bg-violet-500 rounded-xl hover:bg-violet-600 text-white">
                     <FaShoppingCart className="mr-2 mt-1" />
                         Add to Cart
                     </button>

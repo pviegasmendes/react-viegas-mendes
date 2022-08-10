@@ -25,7 +25,7 @@ function ItemDetail({ product }) {
                             <h3 className="font-bold text-xl m-4 truncate w-72">
                                 {product.title}
                             </h3>
-                            <p className="font-semibold text-3xl text-violet-500 ml-4 mb-4  ">
+                            <p className="font-semibold text-6xl text-violet-500 ml-4 mb-4  ">
                                 $ {product.price}.-
                             </p>
                         </div>

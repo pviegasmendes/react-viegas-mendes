@@ -6,6 +6,15 @@ import { Link } from "react-router-dom";
 const NavBar = ({ type }) => {
     const [nav, setNav] = useState(true);
 
+    const categories = [
+        "electronics",
+        "jewelery",
+        "men's clothing",
+        "women's clothing",
+    ];
+
+
+
     const handleNav = () => {
         setNav(!nav);
     };
@@ -13,37 +22,45 @@ const NavBar = ({ type }) => {
     if (type == "header") {
         return (
             <nav>
-                <ul className="hidden  md:flex  gap-2 mr-4">
+                <ul className="hidden  lg:flex  gap-2 mr-4">
                     <li>
                         <Link
-                            to="/"
-                            className=" py-1 px-3 hover:underline underline-offset-4 "
+                            to={categories[0]}
+                            className=" py-1 px-3 hover:underline underline-offset-4 capitalize "
                         >
-                            Home
+                            {categories[0]}
                         </Link>
                     </li>
                     <li>
                         <Link
-                            to="/male"
-                            className=" py-1 px-3 hover:underline underline-offset-4 "
+                            to={categories[1]}
+                            className=" py-1 px-3 hover:underline underline-offset-4 capitalize"
                         >
-                            Male
+                            {categories[1]}
                         </Link>
                     </li>
                     <li>
                         <Link
-                            to="/female"
-                            className=" py-1 px-3 hover:underline underline-offset-4 "
+                            to={categories[2]}
+                            className=" py-1 px-3 hover:underline underline-offset-4 capitalize "
                         >
-                            Female
+                            {categories[2]}
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            to={categories[3]}
+                            className=" py-1 px-3 hover:underline underline-offset-4 capitalize"
+                        >
+                            {categories[3]}
                         </Link>
                     </li>
                     <li>
                         <Link
                             to="/contact"
-                            className=" py-1 px-3 hover:underline underline-offset-4 "
+                            className=" py-1 px-3 hover:underline underline-offset-4 capitalize"
                         >
-                            Contact
+                            contact
                         </Link>
                     </li>
                     <li>
@@ -53,7 +70,7 @@ const NavBar = ({ type }) => {
                 {/* Menu nobile */}
                 <div
                     onClick={handleNav}
-                    className="cursor-pointer block md:hidden "
+                    className="cursor-pointer block lg:hidden "
                 >
                     {!nav ? (
                         <AiOutlineClose className="text-3xl text-slate-700" />
