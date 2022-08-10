@@ -1,27 +1,40 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
 import { TailSpin } from "react-loader-spinner";
 
 function ItemListContainer(props) {
     const [listProducts, setListProducs] = useState([]);
     const [loading, setLoading] = useState(false);
+    const r = useParams();
+    console.log(r);
+    let id = r.id;
+    console.log(id);
+    let categorytUrl = "";
 
     useEffect(() => {
-        fetch("https://fakestoreapi.com/products")
+
+
+        if ( id == undefined ) {
+            categorytUrl = "https://fakestoreapi.com/products";
+        } else {
+            categorytUrl = "https://fakestoreapi.com/products/category/"+id
+        }
+
+        console.log(categorytUrl);
+
+        fetch(categorytUrl)
             .then((res) => res.json())
             .then((data) => {
-                setListProducs(data)
-                setLoading(true)
+                setListProducs(data);
+                setLoading(true);
             })
-            .catch((err) => console.log(err))
-    }, [])
+            .catch((err) => console.log(err));
+    }, [id]);
 
     return (
         <>
             <div className="flex flex-col ">
-                <h2 className="text-center mt-8 font-bold uppercase">
-                    {props.greeting}
-                </h2>
                 <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl m-auto ">
                     {loading ? (
                         <ItemList listProducts={listProducts} />

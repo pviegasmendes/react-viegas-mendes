@@ -13,8 +13,6 @@ const NavBar = ({ type }) => {
         "women's clothing",
     ];
 
-
-
     const handleNav = () => {
         setNav(!nav);
     };
@@ -25,7 +23,7 @@ const NavBar = ({ type }) => {
                 <ul className="hidden  lg:flex  gap-2 mr-4">
                     <li>
                         <Link
-                            to={categories[0]}
+                            to={`/category/${categories[0]}`}
                             className=" py-1 px-3 hover:underline underline-offset-4 capitalize "
                         >
                             {categories[0]}
@@ -33,7 +31,7 @@ const NavBar = ({ type }) => {
                     </li>
                     <li>
                         <Link
-                            to={categories[1]}
+                            to={`/category/${categories[1]}`}
                             className=" py-1 px-3 hover:underline underline-offset-4 capitalize"
                         >
                             {categories[1]}
@@ -41,7 +39,7 @@ const NavBar = ({ type }) => {
                     </li>
                     <li>
                         <Link
-                            to={categories[2]}
+                            to={`/category/${categories[2]}`}
                             className=" py-1 px-3 hover:underline underline-offset-4 capitalize "
                         >
                             {categories[2]}
@@ -49,18 +47,10 @@ const NavBar = ({ type }) => {
                     </li>
                     <li>
                         <Link
-                            to={categories[3]}
+                            to={`/category/${categories[3]}`}
                             className=" py-1 px-3 hover:underline underline-offset-4 capitalize"
                         >
                             {categories[3]}
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            to="/contact"
-                            className=" py-1 px-3 hover:underline underline-offset-4 capitalize"
-                        >
-                            contact
                         </Link>
                     </li>
                     <li>
@@ -87,36 +77,36 @@ const NavBar = ({ type }) => {
                 >
                     <ul className="">
                         <li className="p-4  border-b border-slate-400">
-                            <a
-                                href="#"
+                            <Link
+                                to={`/category/${categories[0]}`}
                                 className=" text-3xl py-1 px-3 rounded "
                             >
-                                Home
-                            </a>
+                                {categories[0]}
+                            </Link>
                         </li>
                         <li className="p-4  border-b border-slate-400">
-                            <a
-                                href="#"
+                            <Link
+                                to={`/category/${categories[1]}`}
                                 className=" text-3xl py-1 px-3 rounded "
                             >
-                                Male
-                            </a>
+                                {categories[1]}
+                            </Link>
                         </li>
                         <li className="p-4  border-b border-slate-400">
-                            <a
-                                href="#"
+                            <Link
+                                to={`/category/${categories[2]}`}
                                 className=" text-3xl py-1 px-3 rounded "
                             >
-                                Female
-                            </a>
+                                {categories[2]}
+                            </Link>
                         </li>
                         <li className="p-4  border-b border-slate-400">
-                            <a
-                                href="#"
+                            <Link
+                                to={`/category/${categories[3]}`}
                                 className=" text-3xl py-1 px-3 rounded "
                             >
-                                Contact
-                            </a>
+                                {categories[3]}
+                            </Link>
                         </li>
                         <li className="p-4  ">
                             <CartWidget />
@@ -130,36 +120,36 @@ const NavBar = ({ type }) => {
             <nav>
                 <ul className="flex gap-2 m-6">
                     <li>
-                        <a
-                            href="#"
+                        <Link
+                            to={`/category/${categories[0]}`}
                             className=" py-1 px-3 hover:underline underline-offset-4"
                         >
-                            Home
-                        </a>
+                            {categories[0]}
+                        </Link>
                     </li>
                     <li>
-                        <a
-                            href="#"
+                        <Link
+                            to={`/category/${categories[1]}`}
                             className=" py-1 px-3 hover:underline underline-offset-4"
                         >
-                            Male
-                        </a>
+                            {categories[1]}
+                        </Link>
                     </li>
                     <li>
-                        <a
-                            href="#"
+                        <Link
+                            to={`/category/${categories[2]}`}
                             className=" py-1 px-3 hover:underline underline-offset-4"
                         >
-                            Female
-                        </a>
+                            {categories[2]}
+                        </Link>
                     </li>
                     <li>
-                        <a
-                            href="#"
+                        <Link
+                            to={`/category/${categories[3]}`}
                             className=" py-1 px-3 hover:underline underline-offset-4"
                         >
-                            Contact
-                        </a>
+                            {categories[3]}
+                        </Link>
                     </li>
                 </ul>
             </nav>

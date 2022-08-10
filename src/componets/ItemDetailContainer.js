@@ -1,11 +1,14 @@
 import ItemDetail from "./ItemDetail";
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 function ItemDetailContainer() {
     const [loading, setLoading] = useState(false);
     const [showProduct, setShowProduct] = useState({});
-    let id = 7;
+    const r = useParams ()
+    let id = r.id;
     let productUrl = "https://fakestoreapi.com/products/"+id
+    
 
     useEffect(() => {
 
