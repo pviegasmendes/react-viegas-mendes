@@ -79,7 +79,7 @@ const NavBar = ({ type }) => {
                         <li className="p-4  border-b border-slate-400">
                             <Link
                                 to={`/category/${categories[0]}`}
-                                className=" text-3xl py-1 px-3 rounded "
+                                className=" text-3xl py-1 px-3 rounded capitalize "
                             >
                                 {categories[0]}
                             </Link>
@@ -87,7 +87,7 @@ const NavBar = ({ type }) => {
                         <li className="p-4  border-b border-slate-400">
                             <Link
                                 to={`/category/${categories[1]}`}
-                                className=" text-3xl py-1 px-3 rounded "
+                                className=" text-3xl py-1 px-3 rounded capitalize "
                             >
                                 {categories[1]}
                             </Link>
@@ -95,7 +95,7 @@ const NavBar = ({ type }) => {
                         <li className="p-4  border-b border-slate-400">
                             <Link
                                 to={`/category/${categories[2]}`}
-                                className=" text-3xl py-1 px-3 rounded "
+                                className=" text-3xl py-1 px-3 rounded  capitalize"
                             >
                                 {categories[2]}
                             </Link>
@@ -103,7 +103,7 @@ const NavBar = ({ type }) => {
                         <li className="p-4  border-b border-slate-400">
                             <Link
                                 to={`/category/${categories[3]}`}
-                                className=" text-3xl py-1 px-3 rounded "
+                                className=" text-3xl py-1 px-3 rounded capitalize"
                             >
                                 {categories[3]}
                             </Link>
@@ -122,7 +122,7 @@ const NavBar = ({ type }) => {
                     <li>
                         <Link
                             to={`/category/${categories[0]}`}
-                            className=" py-1 px-3 hover:underline underline-offset-4"
+                            className=" py-1 px-3 hover:underline underline-offset-4 capitalize"
                         >
                             {categories[0]}
                         </Link>
@@ -130,7 +130,7 @@ const NavBar = ({ type }) => {
                     <li>
                         <Link
                             to={`/category/${categories[1]}`}
-                            className=" py-1 px-3 hover:underline underline-offset-4"
+                            className=" py-1 px-3 hover:underline underline-offset-4 capitalize"
                         >
                             {categories[1]}
                         </Link>
@@ -138,7 +138,7 @@ const NavBar = ({ type }) => {
                     <li>
                         <Link
                             to={`/category/${categories[2]}`}
-                            className=" py-1 px-3 hover:underline underline-offset-4"
+                            className=" py-1 px-3 hover:underline underline-offset-4 capitalize"
                         >
                             {categories[2]}
                         </Link>
@@ -146,7 +146,7 @@ const NavBar = ({ type }) => {
                     <li>
                         <Link
                             to={`/category/${categories[3]}`}
-                            className=" py-1 px-3 hover:underline underline-offset-4"
+                            className=" py-1 px-3 hover:underline underline-offset-4 capitalize"
                         >
                             {categories[3]}
                         </Link>

@@ -7,21 +7,15 @@ function ItemListContainer(props) {
     const [listProducts, setListProducs] = useState([]);
     const [loading, setLoading] = useState(false);
     const r = useParams();
-    console.log(r);
     let id = r.id;
-    console.log(id);
     let categorytUrl = "";
 
     useEffect(() => {
-
-
-        if ( id == undefined ) {
+        if (id == undefined) {
             categorytUrl = "https://fakestoreapi.com/products";
         } else {
-            categorytUrl = "https://fakestoreapi.com/products/category/"+id
+            categorytUrl = "https://fakestoreapi.com/products/category/" + id;
         }
-
-        console.log(categorytUrl);
 
         fetch(categorytUrl)
             .then((res) => res.json())

@@ -5,13 +5,11 @@ import { useParams } from "react-router-dom";
 function ItemDetailContainer() {
     const [loading, setLoading] = useState(false);
     const [showProduct, setShowProduct] = useState({});
-    const r = useParams ()
+    const r = useParams();
     let id = r.id;
-    let productUrl = "https://fakestoreapi.com/products/"+id
-    
+    let productUrl = "https://fakestoreapi.com/products/" + id;
 
     useEffect(() => {
-
         fetch(productUrl)
             .then((res) => res.json())
             .then((data) => {
@@ -23,7 +21,12 @@ function ItemDetailContainer() {
 
     return (
         <>
-            {loading ? (<ItemDetail product={showProduct} />) : ( <p className="text-center mt-10">Loading Item Detail...</p>)}</>
+            {loading ? (
+                <ItemDetail product={showProduct} />
+            ) : (
+                <p className="text-center mt-10">Loading Item Detail...</p>
+            )}
+        </>
     );
 }
 export default ItemDetailContainer;

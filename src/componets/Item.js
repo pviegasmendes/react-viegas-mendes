@@ -1,9 +1,7 @@
 import { FaShoppingCart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-
 const Item = ({ product }) => {
-
     return (
         <>
             <div className="w-80 border-solid  rounded-2xl mt-7 mb-9 shadow-xl overflow-hidden">
@@ -23,9 +21,7 @@ const Item = ({ product }) => {
 
                 <div className="p-4">
                     <button className="flex justify-center font-bold w-full p-4 mb-2 border-solid border-2 text-violet-500 border-violet-500 bg-white rounded-xl hover:bg-violet-500 hover:text-white">
-                       <Link to={`/item/${product.id}`} >
-                        Product Details
-                       </Link> 
+                        <Link to={`/item/${product.id}`}>Product Details</Link>
                     </button>
                     <button className="flex justify-center font-bold w-full p-4 text-white bg-violet-500 rounded-xl hover:bg-violet-600">
                         <FaShoppingCart className="mr-2 mt-1" />
