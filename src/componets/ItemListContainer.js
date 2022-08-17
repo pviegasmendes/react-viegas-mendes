@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
 import { TailSpin } from "react-loader-spinner";
 
-function ItemListContainer(props) {
+function ItemListContainer() {
     const [listProducts, setListProducs] = useState([]);
     const [loading, setLoading] = useState(false);
     const r = useParams();
