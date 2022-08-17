@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FaShoppingCart } from "react-icons/fa";
 
-function ItemCount() {
+function ItemCount({setEnCarrito}) {
     const [contador, setContador] = useState(1);
     const [stock, setStock] = useState(5);
 
@@ -18,6 +18,10 @@ function ItemCount() {
             setContador(contador - 1);
         }
     };
+
+    const onAdd = () => {
+setEnCarrito(contador)
+    }
 
     return (
         <>
@@ -42,7 +46,7 @@ function ItemCount() {
                             +
                         </button>
                     </div>
-                    <button className="flex justify-center font-bold w-full p-4 bg-violet-500 rounded-xl hover:bg-violet-600 text-white">
+                    <button onClick={onAdd} className="flex justify-center font-bold w-full p-4 bg-violet-500 rounded-xl hover:bg-violet-600 text-white">
                     <FaShoppingCart className="mr-2 mt-1" />
                         Add to Cart
                     </button>

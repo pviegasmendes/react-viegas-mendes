@@ -1,6 +1,8 @@
+import { useState } from "react";
 import ItemCount from "./ItemCount";
 
 function ItemDetail({ product }) {
+    const [enCarrito, setEnCarrito] = useState(0)
     return (
         <>
             <div className="max-w-5xl mx-auto border-solid rounded-2xl p-4 mt-10 mb-9 shadow-xl overflow-hidden">
@@ -29,8 +31,9 @@ function ItemDetail({ product }) {
                                 $ {product.price}.-
                             </p>
                         </div>
+                        <div className="p-4">Agregar al Carrito: {enCarrito}</div>
                         <div>
-                            <ItemCount />
+                            <ItemCount setEnCarrito={setEnCarrito} />
                         </div>
                     </div>
                 </div>
