@@ -1,8 +1,19 @@
+import { useContext } from "react";
 import { useState } from "react";
+import { CartContext } from "../context/CartContext";
 import ItemCount from "./ItemCount";
 
 function ItemDetail({ product }) {
-    const [enCarrito, setEnCarrito] = useState(0)
+    const [enCarrito, setEnCarrito] = useState(1);
+    const [stock, setStock] = useState(5);
+
+    const { isInCart, addItem } = useContext(CartContext);
+
+    const onAdd = () => {
+        isInCart(product.id);
+        addItem(product, enCarrito);
+    };
+
     return (
         <>
             <div className="max-w-5xl mx-auto border-solid rounded-2xl p-4 mt-10 mb-9 shadow-xl overflow-hidden">
@@ -31,9 +42,14 @@ function ItemDetail({ product }) {
                                 $ {product.price}.-
                             </p>
                         </div>
-                        <div className="p-4">Agregar al Carrito: {enCarrito}</div>
                         <div>
-                            <ItemCount setEnCarrito={setEnCarrito} />
+                            <ItemCount
+                                enCarrito={enCarrito}
+                                setEnCarrito={setEnCarrito}
+                                onAdd={onAdd}
+                                stock={stock}
+                                setStock={setStock}
+                            />
                         </div>
                     </div>
                 </div>

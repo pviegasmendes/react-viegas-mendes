@@ -1,28 +1,24 @@
 import { useState } from "react";
 import { FaShoppingCart } from "react-icons/fa";
 
-function ItemCount({setEnCarrito}) {
-    const [contador, setContador] = useState(1);
-    const [stock, setStock] = useState(5);
+function ItemCount({enCarrito, setEnCarrito, onAdd, setStock, stock }) {
+
 
     const agregarProducto = () => {
         if (stock > 0) {
             setStock(stock - 1);
-            setContador(contador + 1);
+            setEnCarrito(enCarrito + 1);
         }
     };
 
     const quitarProducto = () => {
-        if (contador > 0) {
+        if (enCarrito > 0) {
             setStock(stock + 1);
-            setContador(contador - 1);
+            setEnCarrito(enCarrito - 1);
         }
     };
 
-    const onAdd = () => {
-setEnCarrito(contador)
-    }
-
+ 
     return (
         <>
             <div className="w-80 border-solid  rounded-2xl mt-7 mb-9overflow-hidden">
@@ -38,7 +34,7 @@ setEnCarrito(contador)
                         >
                             -
                         </button>
-                        <div className="p-4">{contador}</div>
+                        <div className="p-4">{enCarrito}</div>
                         <button
                             onClick={agregarProducto}
                             className="p-4 bg-slate-100 hover:bg-slate-200"
@@ -46,8 +42,11 @@ setEnCarrito(contador)
                             +
                         </button>
                     </div>
-                    <button onClick={onAdd} className="flex justify-center font-bold w-full p-4 bg-violet-500 rounded-xl hover:bg-violet-600 text-white">
-                    <FaShoppingCart className="mr-2 mt-1" />
+                    <button
+                        onClick={()=>{onAdd()}}
+                        className="flex justify-center font-bold w-full p-4 bg-violet-500 rounded-xl hover:bg-violet-600 text-white"
+                    >
+                        <FaShoppingCart className="mr-2 mt-1" />
                         Add to Cart
                     </button>
                 </div>

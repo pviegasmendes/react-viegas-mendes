@@ -23,10 +23,6 @@ const Item = ({ product }) => {
                     <button className="flex justify-center font-bold w-full p-4 mb-2 border-solid border-2 text-violet-500 border-violet-500 bg-white rounded-xl hover:bg-violet-500 hover:text-white">
                         <Link to={`/item/${product.id}`}>Product Details</Link>
                     </button>
-                    <button className="flex justify-center font-bold w-full p-4 text-white bg-violet-500 rounded-xl hover:bg-violet-600">
-                        <FaShoppingCart className="mr-2 mt-1" />
-                        Add to Cart
-                    </button>
                 </div>
             </div>
         </>
