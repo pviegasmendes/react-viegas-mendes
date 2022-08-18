@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { FaShoppingCart } from "react-icons/fa";
 
 function ItemCount({enCarrito, setEnCarrito, onAdd, setStock, stock }) {
