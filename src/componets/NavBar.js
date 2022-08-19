@@ -17,7 +17,7 @@ const NavBar = ({ type }) => {
         setNav(!nav);
     };
 
-    if (type == "header") {
+    if (type === "header") {
         return (
             <nav>
                 <ul className="hidden  lg:flex  gap-2 mr-4">
@@ -78,6 +78,7 @@ const NavBar = ({ type }) => {
                     <ul className="">
                         <li className="p-4  border-b border-slate-400">
                             <Link
+                            onClick={handleNav}
                                 to={`/category/${categories[0]}`}
                                 className=" text-3xl py-1 px-3 rounded capitalize "
                             >
@@ -86,6 +87,7 @@ const NavBar = ({ type }) => {
                         </li>
                         <li className="p-4  border-b border-slate-400">
                             <Link
+                            onClick={handleNav}
                                 to={`/category/${categories[1]}`}
                                 className=" text-3xl py-1 px-3 rounded capitalize "
                             >
@@ -94,6 +96,7 @@ const NavBar = ({ type }) => {
                         </li>
                         <li className="p-4  border-b border-slate-400">
                             <Link
+                            onClick={handleNav}
                                 to={`/category/${categories[2]}`}
                                 className=" text-3xl py-1 px-3 rounded  capitalize"
                             >
@@ -102,13 +105,14 @@ const NavBar = ({ type }) => {
                         </li>
                         <li className="p-4  border-b border-slate-400">
                             <Link
+                            onClick={handleNav}
                                 to={`/category/${categories[3]}`}
                                 className=" text-3xl py-1 px-3 rounded capitalize"
                             >
                                 {categories[3]}
                             </Link>
                         </li>
-                        <li className="p-4  ">
+                        <li className="p-4" onClick={handleNav}>
                             <CartWidget />
                         </li>
                     </ul>
