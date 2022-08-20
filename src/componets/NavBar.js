@@ -58,16 +58,21 @@ const NavBar = ({ type }) => {
                     </li>
                 </ul>
                 {/* Menu nobile */}
-                <div
-                    onClick={handleNav}
-                    className="cursor-pointer block lg:hidden "
-                >
-                    {!nav ? (
-                        <AiOutlineClose className="text-3xl text-slate-700" />
-                    ) : (
-                        <AiOutlineMenu className="text-3xl text-slate-700" />
-                    )}
+                <div className="flex gap-8">
+                    <CartWidget />
+
+                    <div
+                        onClick={handleNav}
+                        className="cursor-pointer block lg:hidden "
+                    >
+                        {!nav ? (
+                            <AiOutlineClose className="text-3xl text-slate-700" />
+                        ) : (
+                            <AiOutlineMenu className="text-3xl text-slate-700" />
+                        )}
+                    </div>
                 </div>
+
                 <div
                     className={
                         !nav
@@ -78,7 +83,7 @@ const NavBar = ({ type }) => {
                     <ul className="">
                         <li className="p-4  border-b border-slate-400">
                             <Link
-                            onClick={handleNav}
+                                onClick={handleNav}
                                 to={`/category/${categories[0]}`}
                                 className=" text-3xl py-1 px-3 rounded capitalize "
                             >
@@ -87,7 +92,7 @@ const NavBar = ({ type }) => {
                         </li>
                         <li className="p-4  border-b border-slate-400">
                             <Link
-                            onClick={handleNav}
+                                onClick={handleNav}
                                 to={`/category/${categories[1]}`}
                                 className=" text-3xl py-1 px-3 rounded capitalize "
                             >
@@ -96,7 +101,7 @@ const NavBar = ({ type }) => {
                         </li>
                         <li className="p-4  border-b border-slate-400">
                             <Link
-                            onClick={handleNav}
+                                onClick={handleNav}
                                 to={`/category/${categories[2]}`}
                                 className=" text-3xl py-1 px-3 rounded  capitalize"
                             >
@@ -105,15 +110,12 @@ const NavBar = ({ type }) => {
                         </li>
                         <li className="p-4  border-b border-slate-400">
                             <Link
-                            onClick={handleNav}
+                                onClick={handleNav}
                                 to={`/category/${categories[3]}`}
                                 className=" text-3xl py-1 px-3 rounded capitalize"
                             >
                                 {categories[3]}
                             </Link>
-                        </li>
-                        <li className="p-4" onClick={handleNav}>
-                            <CartWidget />
                         </li>
                     </ul>
                 </div>
