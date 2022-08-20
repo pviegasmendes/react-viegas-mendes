@@ -10,8 +10,11 @@ function ItemDetail({ product }) {
     const { isInCart, addItem } = useContext(CartContext);
 
     const onAdd = () => {
-        isInCart(product.id);
-        addItem(product, enCarrito);
+        if (stock > 0) {
+            isInCart(product.id);
+            addItem(product, enCarrito);
+            setStock(stock - enCarrito);
+        }
     };
 
     return (
