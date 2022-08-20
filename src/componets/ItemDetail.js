@@ -14,6 +14,7 @@ function ItemDetail({ product }) {
             isInCart(product.id);
             addItem(product, enCarrito);
             setStock(stock - enCarrito);
+            setEnCarrito(1)
         }
     };
 

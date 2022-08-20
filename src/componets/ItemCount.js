@@ -4,15 +4,15 @@ function ItemCount({enCarrito, setEnCarrito, onAdd, setStock, stock }) {
 
 
     const agregarProducto = () => {
-        if (stock > 0) {
-            setStock(stock - 1);
+        if (stock > 0 && enCarrito < stock) {
+            
             setEnCarrito(enCarrito + 1);
         }
     };
 
     const quitarProducto = () => {
         if (enCarrito > 0) {
-            setStock(stock + 1);
+
             setEnCarrito(enCarrito - 1);
         }
     };
