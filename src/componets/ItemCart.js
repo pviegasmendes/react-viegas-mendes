@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-import { CartContext, } from "../context/CartContext";
+import { CartContext } from "../context/CartContext";
 import { AiOutlineClose } from "react-icons/ai";
 
 const ItemCart = ({ product }) => {
-    const {deleteItem} = useContext(CartContext);
+    const { deleteItem } = useContext(CartContext);
     return (
         <>
             <div className="border-solid grid grid-cols-6 items-end ounded-2xl mt-7 mb-9 shadow-xl overflow-hidden m-8">
@@ -27,11 +27,14 @@ const ItemCart = ({ product }) => {
                     $ {product.price * product.enCarrito}.-
                 </p>
 
-                <div className="p-4">
-
-                    <AiOutlineClose onClick={()=> deleteItem(product.id)} className="text-3xl text-violet-500 cursor-pointer hover:text-violet-700" />
-                </div>
+                <button className="p-4">
+                    <AiOutlineClose
+                        onClick={() => deleteItem(product.id)}
+                        className="text-3xl text-violet-500 cursor-pointer hover:text-violet-700"
+                    />
+                </button>
             </div>
+
         </>
     );
 };

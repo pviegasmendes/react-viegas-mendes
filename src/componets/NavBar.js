@@ -59,16 +59,21 @@ const NavBar = ({ type }) => {
                 </ul>
                 {/* Menu nobile */}
                 <div className="flex gap-8">
-                    <CartWidget />
-
+                    <div className="lg:hidden">
+                        <CartWidget />
+                    </div>
                     <div
                         onClick={handleNav}
                         className="cursor-pointer block lg:hidden "
                     >
                         {!nav ? (
-                            <AiOutlineClose className="text-3xl text-slate-700" />
+                            <div className="flex gap-4">
+                                <AiOutlineClose className="text-3xl text-slate-700" />
+                            </div>
                         ) : (
-                            <AiOutlineMenu className="text-3xl text-slate-700" />
+                            <div className="flex gap-4">
+                                <AiOutlineMenu className="text-3xl text-slate-700" />
+                            </div>
                         )}
                     </div>
                 </div>
