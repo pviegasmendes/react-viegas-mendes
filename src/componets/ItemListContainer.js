@@ -2,36 +2,51 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
 import { TailSpin } from "react-loader-spinner";
+// 1  traigo la base
+import { db } from "../firebase";
+// 2 genero referencia a coleccion
+import { collection } from "firebase/firestore";
+
+// 3 teniendo la coleccion me traigo los productos
+import { getDoc, getDocs } from "firebase/firestore";
 
 function ItemListContainer() {
     const [listProducts, setListProducs] = useState([]);
     const [loading, setLoading] = useState(false);
     const r = useParams();
-    let id = r.id;
-    let categorytUrl = "";
+    let category = r.category;
+
 
     useEffect(() => {
-        if (id == undefined) {
-            categorytUrl = "https://fakestoreapi.com/products";
-        } else {
-            categorytUrl = "https://fakestoreapi.com/products/category/" + id;
-        }
+        const productsCollection = collection(db, "protucts");
+        //trae todos los documentos de la coleccion del parametro
+        const consulta = getDocs(productsCollection);
+        consulta
+            .then((snapshot) => {
+                //console.log(snapshot.docs)
+                const dbProducts = snapshot.docs.map((doc) => {
+                    return {
+                        ...doc.data(),
+                        id: doc.id,
+                    };
+                });
+                setListProducs(dbProducts);
 
-        fetch(categorytUrl)
-            .then((res) => res.json())
-            .then((data) => {
-                setListProducs(data);
+                
                 setLoading(true);
             })
-            .catch((err) => console.log(err));
-    }, [id]);
+            .catch((err) => {
+                console.log(err);
+            });
+
+    }, [category]);
 
     return (
         <>
             <div className="flex flex-col ">
                 <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl m-auto ">
                     {loading ? (
-                        <ItemList listProducts={listProducts} />
+                        <ItemList listProducts={category ? listProducts.filter(item => item.category == category) : listProducts} />
                     ) : (
                         <>
                             <div className="p-8">

@@ -5,9 +5,10 @@ import ItemCount from "./ItemCount";
 
 function ItemDetail({ product }) {
     const [enCarrito, setEnCarrito] = useState(1);
-    const [stock, setStock] = useState(5);
+    const [stock, setStock] = useState(product.stock);
 
     const { isInCart, addItem } = useContext(CartContext);
+
 
     const onAdd = () => {
         if (stock > 0) {

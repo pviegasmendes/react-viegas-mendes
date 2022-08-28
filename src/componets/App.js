@@ -5,6 +5,8 @@ import ItemListContainer from "./ItemListContainer";
 import ItemDetailContainer from "./ItemDetailContainer";
 import Cart from "./Cart";
 import MyProvider from "../context/CartContext";
+import "../firebase"
+
 
 function App() {
     const brand = "Ecommerce Inc. ";
@@ -17,7 +19,7 @@ function App() {
                     <Routes>
                         <Route path="/" element={<ItemListContainer />} />
                         <Route
-                            path="/category/:id"
+                            path="/category/:category"
                             element={<ItemListContainer />}
                         />
                         <Route

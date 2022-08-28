@@ -1,23 +1,28 @@
 import ItemDetail from "./ItemDetail";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { db } from "../firebase";
+import { collection, getDoc, doc } from "firebase/firestore";
 
 function ItemDetailContainer() {
     const [loading, setLoading] = useState(false);
     const [showProduct, setShowProduct] = useState({});
     const r = useParams();
     let id = r.id;
-    let productUrl = "https://fakestoreapi.com/products/" + id;
 
     useEffect(() => {
-        fetch(productUrl)
-            .then((res) => res.json())
-            .then((data) => {
-                setShowProduct(data);
+        const productsCollection = collection(db, "protucts"); //CollectionReference
+        const referencia = doc(productsCollection, id); //DocumentReference
+        const consulta = getDoc(referencia); //Promise
+        consulta
+            .then((res) => {
+                setShowProduct(res.data());
                 setLoading(true);
             })
-            .catch((err) => console.log(err));
-    }, []);
+            .catch((err) => {
+                console.log(err);
+            });
+    }, [id]);
 
     return (
         <>
