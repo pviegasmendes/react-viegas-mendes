@@ -27,7 +27,6 @@ function ItemListContainer() {
                     setListProducs(dbProducts);
 
                     setLoading(true);
-                    console.log(dbProducts);
                 })
                 .catch((err) => {
                     console.log(err);

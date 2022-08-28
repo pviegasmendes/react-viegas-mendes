@@ -6,6 +6,8 @@ import ItemDetailContainer from "./ItemDetailContainer";
 import Cart from "./Cart";
 import MyProvider from "../context/CartContext";
 import "../firebase"
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
@@ -29,6 +31,7 @@ function App() {
                         <Route path="/cart" element={<Cart />} />
                     </Routes>
                     <Footer brand={brand} />
+                    <ToastContainer />
                 </MyProvider>
             </BrowserRouter>
         </>
