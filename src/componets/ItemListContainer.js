@@ -1,14 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
-import { TailSpin } from "react-loader-spinner";
-// 1  traigo la base
 import { db } from "../firebase";
-// 2 genero referencia a coleccion
-import { collection } from "firebase/firestore";
-
-// 3 teniendo la coleccion me traigo los productos
-import { getDoc, getDocs } from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 function ItemListContainer() {
     const [listProducts, setListProducs] = useState([]);
@@ -16,29 +10,53 @@ function ItemListContainer() {
     const r = useParams();
     let category = r.category;
 
-
     useEffect(() => {
-        const productsCollection = collection(db, "protucts");
-        //trae todos los documentos de la coleccion del parametro
-        const consulta = getDocs(productsCollection);
-        consulta
-            .then((snapshot) => {
-                //console.log(snapshot.docs)
-                const dbProducts = snapshot.docs.map((doc) => {
-                    return {
-                        ...doc.data(),
-                        id: doc.id,
-                    };
+        if (!category) {
+            const productsCollection = collection(db, "protucts");
+            //trae todos los documentos de la coleccion del parametro
+            const consulta = getDocs(productsCollection);
+            consulta
+                .then((snapshot) => {
+                    //console.log(snapshot.docs)
+                    const dbProducts = snapshot.docs.map((doc) => {
+                        return {
+                            ...doc.data(),
+                            id: doc.id,
+                        };
+                    });
+                    setListProducs(dbProducts);
+
+                    setLoading(true);
+                    console.log(dbProducts);
+                })
+                .catch((err) => {
+                    console.log(err);
                 });
-                setListProducs(dbProducts);
+        } else {
+            const productsCollection = collection(db, "protucts");
+            const filtro = query(
+                productsCollection,
+                where("category", "==", category)
+            );
+            const consulta = getDocs(filtro);
+            console.log(consulta);
 
-                
-                setLoading(true);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-
+            consulta
+                .then((snapshot) => {
+                    const dbProducts = snapshot.docs.map((doc) => {
+                        return {
+                            ...doc.data(),
+                            id: doc.id,
+                        };
+                    });
+                    setListProducs(dbProducts);
+                    setLoading(true);
+                    console.log(dbProducts);
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        }
     }, [category]);
 
     return (
@@ -46,46 +64,9 @@ function ItemListContainer() {
             <div className="flex flex-col ">
                 <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl m-auto ">
                     {loading ? (
-                        <ItemList listProducts={category ? listProducts.filter(item => item.category == category) : listProducts} />
+                        <ItemList listProducts={listProducts} />
                     ) : (
-                        <>
-                            <div className="p-8">
-                                <TailSpin
-                                    height="80"
-                                    width="80"
-                                    color="#f4f4f4"
-                                    ariaLabel="tail-spin-loading"
-                                    radius="1"
-                                    wrapperStyle={{}}
-                                    wrapperClass=""
-                                    visible={true}
-                                />
-                            </div>
-                            <div className="p-8">
-                                <TailSpin
-                                    height="80"
-                                    width="80"
-                                    color="#f4f4f4"
-                                    ariaLabel="tail-spin-loading"
-                                    radius="1"
-                                    wrapperStyle={{}}
-                                    wrapperClass=""
-                                    visible={true}
-                                />
-                            </div>
-                            <div className="p-8">
-                                <TailSpin
-                                    height="80"
-                                    width="80"
-                                    color="#f4f4f4"
-                                    ariaLabel="tail-spin-loading"
-                                    radius="1"
-                                    wrapperStyle={{}}
-                                    wrapperClass=""
-                                    visible={true}
-                                />
-                            </div>
-                        </>
+                        <h2>Loading...</h2>
                     )}
                 </div>
             </div>
