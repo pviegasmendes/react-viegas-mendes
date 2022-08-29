@@ -10,6 +10,7 @@ const Cart = () => {
         useContext(CartContext);
     const [checkout, setCheckout] = useState(false);
 
+
     return cartLength === 0 ? (
         <div className="grid justify-center">
             <h1 className="font-bold text-xl m-4">Carrito Vacio</h1>
@@ -37,7 +38,7 @@ const Cart = () => {
                     Vaciar Carrito
                 </button>
             </div>
-            <div>
+            <div className="col-span-2">
                 {!checkout ? (
                     <button
                         onClick={() => setCheckout(true)}

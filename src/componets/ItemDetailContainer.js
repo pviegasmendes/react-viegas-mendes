@@ -16,7 +16,11 @@ function ItemDetailContainer() {
         const consulta = getDoc(referencia); //Promise
         consulta
             .then((res) => {
-                setShowProduct(res.data());
+                const tempProduct = res.data()
+                tempProduct.id = id
+
+                setShowProduct(tempProduct);
+                console.log(tempProduct)
                 setLoading(true);
             })
             .catch((err) => {

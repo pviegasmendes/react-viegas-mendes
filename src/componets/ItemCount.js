@@ -1,23 +1,18 @@
 import { FaShoppingCart } from "react-icons/fa";
 
-function ItemCount({enCarrito, setEnCarrito, onAdd, setStock, stock }) {
-
-
+function ItemCount({ enCarrito, setEnCarrito, onAdd, setStock, stock }) {
     const agregarProducto = () => {
         if (stock > 0 && enCarrito < stock) {
-            
             setEnCarrito(enCarrito + 1);
         }
     };
 
     const quitarProducto = () => {
         if (enCarrito > 0) {
-
             setEnCarrito(enCarrito - 1);
         }
     };
 
- 
     return (
         <>
             <div className="w-80 border-solid  rounded-2xl mt-7 mb-9overflow-hidden">
@@ -42,7 +37,9 @@ function ItemCount({enCarrito, setEnCarrito, onAdd, setStock, stock }) {
                         </button>
                     </div>
                     <button
-                        onClick={()=>{onAdd()}}
+                        onClick={() => {
+                            onAdd();
+                        }}
                         className="flex justify-center font-bold w-full p-4 bg-violet-500 rounded-xl hover:bg-violet-600 text-white"
                     >
                         <FaShoppingCart className="mr-2 mt-1" />

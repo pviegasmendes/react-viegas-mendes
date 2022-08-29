@@ -50,8 +50,12 @@ const Checkout = () => {
     return (
         <div>
             <h2>Complete tus datos</h2>
-            <form onSubmit={handlerSubmit}>
+            <form
+                onSubmit={handlerSubmit}
+                className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+            >
                 <input
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     placeholder="Nombre"
                     name="name"
                     value={costumer.name}
@@ -59,6 +63,7 @@ const Checkout = () => {
                     required
                 />
                 <input
+                    className="mt-4 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     placeholder="Apellido"
                     name="lastname"
                     value={costumer.lastname}
@@ -66,6 +71,7 @@ const Checkout = () => {
                     required
                 />
                 <input
+                    className="mt-4 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     placeholder="Correo Electrónico"
                     name="email"
                     value={costumer.email}
@@ -73,13 +79,14 @@ const Checkout = () => {
                     required
                 />
                 <input
+                    className="mt-4 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     placeholder="Domicilio"
                     name="address"
                     value={costumer.address}
                     onChange={handlerChangeInput}
                     required
                 />
-                <button type="submit">Confirmar Compra!</button>
+                <button className="mt-4 font-bold w-full p-4 bg-violet-500 rounded-xl hover:bg-violet-600 text-white" type="submit">Confirmar Compra!</button>
             </form>
         </div>
     );

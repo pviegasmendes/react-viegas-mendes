@@ -25,7 +25,6 @@ function ItemListContainer() {
                         };
                     });
                     setListProducs(dbProducts);
-
                     setLoading(true);
                 })
                 .catch((err) => {
@@ -38,7 +37,6 @@ function ItemListContainer() {
                 where("category", "==", category)
             );
             const consulta = getDocs(filtro);
-            console.log(consulta);
 
             consulta
                 .then((snapshot) => {
@@ -50,7 +48,6 @@ function ItemListContainer() {
                     });
                     setListProducs(dbProducts);
                     setLoading(true);
-                    console.log(dbProducts);
                 })
                 .catch((err) => {
                     console.log(err);
