@@ -19,9 +19,12 @@ const Item = ({ product }) => {
                 </p>
 
                 <div className="p-4">
-                    <button className="flex justify-center font-bold w-full p-4 mb-2 border-solid border-2 text-violet-500 border-violet-500 bg-white rounded-xl hover:bg-violet-500 hover:text-white">
-                        <Link to={`/item/${product.id}`}>Product Details</Link>
-                    </button>
+                    <Link
+                        to={`/item/${product.id}`}
+                        className="flex justify-center font-bold w-full p-4 mb-2 border-solid border-2 text-violet-500 border-violet-500 bg-white rounded-xl hover:bg-violet-500 hover:text-white"
+                    >
+                        Product Details
+                    </Link>
                 </div>
             </div>
         </>
