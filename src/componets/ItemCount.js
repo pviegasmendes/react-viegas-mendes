@@ -1,6 +1,6 @@
 import { FaShoppingCart } from "react-icons/fa";
 
-function ItemCount({ enCarrito, setEnCarrito, onAdd, setStock, stock }) {
+function ItemCount({ enCarrito, setEnCarrito, onAdd, stock }) {
     const agregarProducto = () => {
         if (stock > 0 && enCarrito < stock) {
             setEnCarrito(enCarrito + 1);

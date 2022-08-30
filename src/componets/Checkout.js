@@ -3,16 +3,17 @@ import { toast } from "react-toastify";
 import { CartContext } from "../context/CartContext";
 import { db } from "../firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
 
 const Checkout = () => {
+    const navigate = useNavigate();
+
     const [costumer, setCostumer] = useState({
         name: "",
         lastname: "",
         email: "",
         address: "",
     });
-
-    const [submit, setSubmit] = useState(false);
 
     const { cart, emptyCart, getItemPrice } = useContext(CartContext);
 
@@ -33,17 +34,16 @@ const Checkout = () => {
             date: serverTimestamp(),
         };
 
-        setSubmit(true);
-
         const ordersCollection = collection(db, "orders");
         const consulta = addDoc(ordersCollection, order);
         consulta
             .then((res) => {
-                toast.success(`Orden ${res.id} creada con exito!`);
+                toast.success(`Thank You. Your Order ${res.id} Has Been Received!`);
             })
             .catch((error) => {
                 console.log(error);
             });
+        navigate("/");
         emptyCart();
     };
 
@@ -86,7 +86,12 @@ const Checkout = () => {
                     onChange={handlerChangeInput}
                     required
                 />
-                <button className="mt-4 font-bold w-full p-4 bg-violet-500 rounded-xl hover:bg-violet-600 text-white" type="submit">Confirmar Compra!</button>
+                <button
+                    className="mt-4 font-bold w-full p-4 bg-violet-500 rounded-xl hover:bg-violet-600 text-white"
+                    type="submit"
+                >
+                    Confirmar Compra!
+                </button>
             </form>
         </div>
     );

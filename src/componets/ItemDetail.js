@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useState } from "react";
 import { CartContext } from "../context/CartContext";
 import ItemCount from "./ItemCount";
+import { toast } from "react-toastify";
 
 function ItemDetail({ product }) {
     const [enCarrito, setEnCarrito] = useState(1);
@@ -15,6 +16,8 @@ function ItemDetail({ product }) {
             addItem(product, enCarrito);
             setStock(stock - enCarrito);
             setEnCarrito(1);
+            toast.success(`${enCarrito} ${product.title} Added to The Cart!`);
+
         }
     };
 
@@ -26,14 +29,14 @@ function ItemDetail({ product }) {
                         <div className="flex justify-center">
                             <img
                                 src={product.image}
-                                alt={product.name}
+                                alt={product.title}
                                 className="h-64 object-contain scale-95 hover:scale-100 transition-all duration-200 ease-out"
                             />
                         </div>
                         <h2 className="m-4 font-bold uppercase">
                             Item Description:
                         </h2>
-                        <p className="font-semibold text-xl m-4">
+                        <p className="font-semibold text-md m-4">
                             {product.description}.-
                         </p>
                     </div>
@@ -41,9 +44,6 @@ function ItemDetail({ product }) {
                         <div className="p-4 flex-grow">
                             <h3 className="font-bold text-xl m-4 truncate w-72">
                                 {product.title}
-                            </h3>
-                            <h3 className="font-bold text-xl m-4 truncate w-72">
-                              ID: {product.id}
                             </h3>
                             <p className="font-semibold text-6xl text-violet-500 ml-4 mb-4">
                                 $ {product.price}.-

@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
 import { db } from "../firebase";
 import { collection, getDocs, query, where } from "firebase/firestore";
+import SkeletonCard from "./SkeletonCard";
 
 function ItemListContainer() {
     const [listProducts, setListProducs] = useState([]);
@@ -62,7 +63,14 @@ function ItemListContainer() {
                     {loading ? (
                         <ItemList listProducts={listProducts} />
                     ) : (
-                        <h2>Loading...</h2>
+                        <>
+                            <SkeletonCard />
+                            <SkeletonCard />
+                            <SkeletonCard />
+                            <SkeletonCard />
+                            <SkeletonCard />
+                            <SkeletonCard />
+                        </>
                     )}
                 </div>
             </div>
@@ -70,3 +78,4 @@ function ItemListContainer() {
     );
 }
 export default ItemListContainer;
+

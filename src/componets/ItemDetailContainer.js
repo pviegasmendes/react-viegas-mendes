@@ -20,7 +20,6 @@ function ItemDetailContainer() {
                 tempProduct.id = id
 
                 setShowProduct(tempProduct);
-                console.log(tempProduct)
                 setLoading(true);
             })
             .catch((err) => {
