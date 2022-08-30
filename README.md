@@ -1,4 +1,4 @@
-# TIENDA GAMER
+# Ecommerce Inc.
 
 E-Commerce Project in React JS.
 Final delivery of the project.
