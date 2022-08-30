@@ -35,7 +35,7 @@ const Cart = () => {
                         onClick={() => emptyCart()}
                         className="btn--secondary"
                     >
-                        Vaciar Carrito
+                        Empty Cart
                     </button>
                 </div>
             </div>
