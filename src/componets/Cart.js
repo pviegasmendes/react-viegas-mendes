@@ -12,12 +12,12 @@ const Cart = () => {
 
     return cartLength === 0 ? (
         <div className="grid justify-center">
-            <h1 className="font-bold text-xl m-4">you Cart Is Empty</h1>
+            <h2 className="font-bold text-xl m-4">You Cart Is Empty</h2>
             <Link
                 to={"/"}
                 className="font-bold mt-8 p-4 mb-2 border-solid border-2 text-white bg-violet-500  rounded-xl hover:bg-violet-700 "
             >
-                Go Shopping!
+                <h3 className="text-center">Go Shopping!</h3>
             </Link>
         </div>
     ) : (
