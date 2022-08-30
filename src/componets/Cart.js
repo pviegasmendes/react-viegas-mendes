@@ -10,7 +10,6 @@ const Cart = () => {
         useContext(CartContext);
     const [checkout, setCheckout] = useState(false);
 
-
     return cartLength === 0 ? (
         <div className="grid justify-center">
             <h1 className="font-bold text-xl m-4">Carrito Vacio</h1>
@@ -30,19 +29,21 @@ const Cart = () => {
                         <ItemCart key={product.id} product={product} />
                     ))}
                 </div>
-                <h3>Total: $ {getItemPrice()} </h3>
-                <button
-                    onClick={() => emptyCart()}
-                    className="font-bold mt-8 p-4 mb-2 border-solid border-2 border-violet-500 text-violet-500 bg-white  rounded-xl hover:bg-violet-700 "
-                >
-                    Vaciar Carrito
-                </button>
+                <div className="text-right mr-8 ">
+                    <h3>Total: $ {getItemPrice()} </h3>
+                    <button
+                        onClick={() => emptyCart()}
+                        className="btn--secondary"
+                    >
+                        Vaciar Carrito
+                    </button>
+                </div>
             </div>
             <div className="col-span-2">
                 {!checkout ? (
                     <button
                         onClick={() => setCheckout(true)}
-                        className="font-bold mt-8 p-4 mb-2 border-solid border-2 border-violet-500 text-violet-500 bg-white  rounded-xl hover:bg-violet-700 "
+                        className="btn--secondary"
                     >
                         Checkout
                     </button>

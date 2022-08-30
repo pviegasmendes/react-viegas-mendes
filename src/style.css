@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    #root {
+        @apply flex flex-col min-h-screen;
+    }
+
+    footer {
+        @apply mt-auto;
+    }
+
+    h1 {
+        @apply text-2xl font-bold;
+    }
+    h2 {
+        @apply text-xl font-semibold;
+    }
+    h3 {
+        @apply text-lg font-semibold;
+    }
+
+    .btn--primary {
+        @apply font-bold mt-8 p-4 mb-2 border-solid border-2 text-white bg-violet-500 text-center  rounded-xl hover:bg-violet-700;
+    }
+    .btn--secondary {
+        @apply font-bold mt-8 p-4 mb-2 border-solid border-2 border-violet-500 text-violet-500 bg-white  rounded-xl hover:bg-violet-700 hover:text-white;
+    }
+}

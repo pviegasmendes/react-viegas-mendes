@@ -72,7 +72,7 @@ const NavBar = ({ type }) => {
                                         onClick={handleNav}
                                         to={`/category/${element}`}
                                         key={index}
-                                        className=" text-3xl py-1 px-3 rounded uppercase border-b border-slate-400"
+                                        className=" text-xl py-1 px-4 rounded uppercase border-b border-slate-400"
                                     >
                                         {element}
                                     </Link>

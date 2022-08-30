@@ -87,7 +87,7 @@ const Checkout = () => {
                     required
                 />
                 <button
-                    className="mt-4 font-bold w-full p-4 bg-violet-500 rounded-xl hover:bg-violet-600 text-white"
+                    className="mt-4 w-full btn--primary"
                     type="submit"
                 >
                     Confirmar Compra!
