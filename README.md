@@ -4,11 +4,7 @@ E-Commerce Project in React JS.
 Final delivery of the project.
 ## Purchase process Gif 
 
-![App view](https://#)
-
-![App view](https://#)
-
-
+![App view](https://pviegasmendes.000webhostapp.com/assets/img/ecommerce-happy-path.gif)
 
 Made by Pablo Viegas Mendes
 
