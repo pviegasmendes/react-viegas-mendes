@@ -17,7 +17,8 @@ function ItemDetail({ product }) {
             setStock(stock - enCarrito);
             setEnCarrito(1);
             toast.success(`${enCarrito} ${product.title} Added to The Cart!`);
-
+        } else {
+            toast.error(`${product.title} Out of stock!`);
         }
     };
 
