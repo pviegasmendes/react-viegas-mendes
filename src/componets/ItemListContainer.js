@@ -4,6 +4,7 @@ import ItemList from "./ItemList";
 import { db } from "../firebase";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import SkeletonCard from "./SkeletonCard";
+import { toast } from "react-toastify";
 
 function ItemListContainer() {
     const [listProducts, setListProducs] = useState([]);
@@ -14,11 +15,9 @@ function ItemListContainer() {
     useEffect(() => {
         if (!category) {
             const productsCollection = collection(db, "protucts");
-            //trae todos los documentos de la coleccion del parametro
             const consulta = getDocs(productsCollection);
             consulta
                 .then((snapshot) => {
-                    //console.log(snapshot.docs)
                     const dbProducts = snapshot.docs.map((doc) => {
                         return {
                             ...doc.data(),
@@ -28,8 +27,8 @@ function ItemListContainer() {
                     setListProducs(dbProducts);
                     setLoading(true);
                 })
-                .catch((err) => {
-                    console.log(err);
+                .catch((error) => {
+                    toast.error(`Error! ${error}`);
                 });
         } else {
             const productsCollection = collection(db, "protucts");
@@ -50,8 +49,8 @@ function ItemListContainer() {
                     setListProducs(dbProducts);
                     setLoading(true);
                 })
-                .catch((err) => {
-                    console.log(err);
+                .catch((error) => {
+                    toast.error(`Error! ${error}`);
                 });
         }
     }, [category]);

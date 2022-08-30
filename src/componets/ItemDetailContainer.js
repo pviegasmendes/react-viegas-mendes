@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { db } from "../firebase";
 import { collection, getDoc, doc } from "firebase/firestore";
+import { toast } from "react-toastify";
 
 function ItemDetailContainer() {
     const [loading, setLoading] = useState(false);
@@ -11,9 +12,9 @@ function ItemDetailContainer() {
     let id = r.id;
 
     useEffect(() => {
-        const productsCollection = collection(db, "protucts"); //CollectionReference
-        const referencia = doc(productsCollection, id); //DocumentReference
-        const consulta = getDoc(referencia); //Promise
+        const productsCollection = collection(db, "protucts"); 
+        const referencia = doc(productsCollection, id);
+        const consulta = getDoc(referencia);
         consulta
             .then((res) => {
                 const tempProduct = res.data()
@@ -22,8 +23,8 @@ function ItemDetailContainer() {
                 setShowProduct(tempProduct);
                 setLoading(true);
             })
-            .catch((err) => {
-                console.log(err);
+            .catch((error) => {
+                toast.error(`Error! ${error}`);
             });
     }, [id]);
 

@@ -41,7 +41,7 @@ const Checkout = () => {
                 toast.success(`Thank You. Your Order ${res.id} Has Been Received!`);
             })
             .catch((error) => {
-                console.log(error);
+                toast.error(`Error! ${error}`);
             });
         navigate("/");
         emptyCart();

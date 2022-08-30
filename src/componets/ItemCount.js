@@ -18,8 +18,8 @@ function ItemCount({ enCarrito, setEnCarrito, onAdd, stock }) {
             <div className="w-80 border-solid  rounded-2xl mt-7 mb-9overflow-hidden">
                 <div className="p-4">
                     <p className="mb-6">
-                        Unidades disponibles{" "}
-                        <span className="font-semibold">{stock}</span>{" "}
+                        Stock{" "}
+                        <span className="font-semibold">{stock}</span>
                     </p>
                     <div className="flex justify-between border-solid border-2 border-slate-100 rounded-xl mb-2 overflow-hidden">
                         <button
