@@ -90,7 +90,7 @@ const Checkout = () => {
                     className="mt-4 w-full btn--primary"
                     type="submit"
                 >
-                    Confirmar Compra!
+                   Place Order!
                 </button>
             </form>
         </div>
